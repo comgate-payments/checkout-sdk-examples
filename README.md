@@ -1,1 +1,1 @@
-# checkout-sdk
+# Comgate Checkout SDK examples
