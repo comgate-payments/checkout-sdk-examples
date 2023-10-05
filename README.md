@@ -2,7 +2,7 @@
 
 The Comgate Checkout SDK is a library that facilitates the implementation of Comgate payment methods, including Apple Pay and Google Pay, directly into the shopping cart of an online store.
 
-The complete documentation is available at https://apidoc.comgate.cz/?lang=en#checkout-sdk
+The complete documentation is available at https://apidoc.comgate.cz/?lang=en#checkout-sdk-1
 
 ## List of examples
 

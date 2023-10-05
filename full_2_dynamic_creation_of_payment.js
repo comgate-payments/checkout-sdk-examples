@@ -111,7 +111,7 @@ function removeButtons() {
 function demo_createApplePay(checkoutInstance) {
     checkoutInstance
         .createApplePay({ // alternative functional notation for createApplePay({}), createApplePay()
-            // a complete list of parameters is available at https://apidoc.comgate.cz/?lang=en#api-component-definition
+            // a complete list of parameters is available at https://apidoc.comgate.cz/?lang=en#definition-of-components-api
             style: {
                 // values according to Apple Pay documentation
                 style: "black", // (optional, default: black, options: black, white, white-outline) button style
@@ -142,7 +142,7 @@ function demo_createApplePay(checkoutInstance) {
 function demo_createGooglePay(checkoutInstance) {
     checkoutInstance
         .createGooglePay({ // alternative functional notation of the createGooglePay({}) method, createGooglePay()
-            // a complete list of parameters is available at https://apidoc.comgate.cz/?lang=en#api-component-definition
+            // a complete list of parameters is available at https://apidoc.comgate.cz/?lang=en#definition-of-components-api
             style: {
                 // values according to Google Pay documentation
                 style: "black", // (optional, default: black, options: black, white) button style
