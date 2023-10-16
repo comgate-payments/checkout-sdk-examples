@@ -11,7 +11,7 @@ document.addEventListener("ComgateCheckoutReady", function () {
             transactionId: "XXXX-XXXX-XXXX", // (required) Comgate Transaction ID obtained after calling /v1.0/create
 
             // list only the services you want to use
-            prefetch: ['googlepay'], // preload the script for GooglePay (ApplePay is always preloaded)
+            prefetch: ['googlepay'], // (optional) preload the script for Google Pay (Apple Pay is always preloaded)
 
             onPaid: (payload) => { // (mandatory) payment has been paid
                 /* TODO DIY */

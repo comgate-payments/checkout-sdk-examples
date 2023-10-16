@@ -12,7 +12,7 @@ document.addEventListener("ComgateCheckoutReady", function () {
             debug: true, // (optional, default: false) detailed development information to the console !!! DO NOT USE 'true' ON PRODUCTION !!!
 
             // list only the services you want to use
-            prefetch: ['googlepay'], // preload the script for GooglePay (ApplePay is always preloaded)
+            prefetch: ['googlepay'], // (optional) preload the script for Google Pay (Apple Pay is always preloaded)
 
             onRequirePayment: (payload) => { // (mandatory) Incorporation and delivery of Comgate transaction ID is requested
                 /* TODO DIY */
