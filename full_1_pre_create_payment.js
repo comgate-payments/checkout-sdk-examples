@@ -17,19 +17,19 @@ document.addEventListener("ComgateCheckoutReady", function () {
             // list only the services you want to use
             prefetch: ['googlepay'], // (optional) preload the script for Google Pay (Apple Pay is always preloaded)
 
-            onPaid: (payload) => { // (mandatory) payment has been paid
+            onPaid: async (payload) => { // (mandatory) payment has been paid
                 removeButtons();
                 alert("The payment was successfully made.");
             },
-            onCancelled: (payload) => { // (mandatory) payment was cancelled or expired
+            onCancelled: async (payload) => { // (mandatory) payment was cancelled or expired
                 removeButtons();
                 alert("Payment was cancelled or expired.");
             },
-            onPending: (payload) => { // (optional) if the payment attempt failed, the payment can continue
+            onPending: async (payload) => { // (optional) if the payment attempt failed, the payment can continue
                 alert("Payment failed, try again.");
                 // if no action is taken, it is advisable not to define the callback
             },
-            onClick: (payload) => { // (optional) called after clicking the button, before processing the payment [confirmation required]
+            onClick: async (payload) => { // (optional) called after clicking the button, before processing the payment [confirmation required]
                 // if no action is taken, it is advisable not to define the callback
 
                 alert("Payment will be made.");
@@ -42,7 +42,7 @@ document.addEventListener("ComgateCheckoutReady", function () {
                     payload.resolve();
                 }
             },
-            onError: (payload) => {
+            onError: async (payload) => {
                 // (mandatory) Error details during processing
                 removeButtons();
                 alert("Payment not made.");

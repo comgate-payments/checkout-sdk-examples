@@ -14,7 +14,7 @@ document.addEventListener("ComgateCheckoutReady", function () {
             // list only the services you want to use
             prefetch: ['googlepay'], // (optional) preload the script for Google Pay (Apple Pay is always preloaded)
 
-            onRequirePayment: (payload) => { // (mandatory) Incorporation and delivery of Comgate transaction ID is requested
+            onRequirePayment: async (payload) => { // (mandatory) Incorporation and delivery of Comgate transaction ID is requested
                 /* TODO DIY */
                 // when calling a callback it is necessary to call the API of the e-shop and create a new payment and return the Comgate ID of the transaction
                 // all data on price, currency and other parameters is safe to retrieve on the side of the server and not to send it to yourself in the call here,
@@ -22,17 +22,17 @@ document.addEventListener("ComgateCheckoutReady", function () {
                 // you can use the helper method supplied in payload to send requests to your server payload.eshopRequest(/*...*/)
                 // or by saving the ComgateCheckout instance into the checkoutInstance.eshopRequest(/*...*/)
             },
-            onPaid: (payload) => { // (mandatory) payment has been paid
+            onPaid: async (payload) => { // (mandatory) payment has been paid
                 /* TODO DIY */
             },
-            onCancelled: (payload) => { // (mandatory) payment was cancelled or expired
+            onCancelled: async (payload) => { // (mandatory) payment was cancelled or expired
                 /* TODO DIY */
             },
-            onPending: (payload) => { // (optional) if the payment attempt failed, the payment can continue
+            onPending: async (payload) => { // (optional) if the payment attempt failed, the payment can continue
                 /* TODO DIY nebo nedefinovat */
                 // if no action is taken, it is advisable not to define the callback
             },
-            onClick: (payload) => { // (optional) called after clicking the button, before processing the payment [confirmation required]
+            onClick: async (payload) => { // (optional) called after clicking the button, before processing the payment [confirmation required]
                 /* TODO DIY nebo nedefinovat */
                 // if no action is taken, it is advisable not to define the callback
 
@@ -42,7 +42,7 @@ document.addEventListener("ComgateCheckoutReady", function () {
                 // otherwise the wait will get stuck
                 payload.resolve();
             },
-            onError: (payload) => { // (mandatory) Error details during processing
+            onError: async (payload) => { // (mandatory) Error details during processing
                 /* TODO DIY */
                 // A substantial part of the payment processing is done asynchronously and therefore cannot be linked to the standard try-catch block.
                 // if this callback is called, the payment is no longer continued, the Comgate ID of the transaction can be used again
