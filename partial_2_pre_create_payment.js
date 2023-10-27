@@ -13,17 +13,17 @@ document.addEventListener("ComgateCheckoutReady", function () {
             // list only the services you want to use
             prefetch: ['googlepay'], // (optional) preload the script for Google Pay (Apple Pay is always preloaded)
 
-            onPaid: async (payload) => { // (mandatory) payment has been paid
+            onPaid: (payload) => { // (mandatory) payment has been paid
                 /* TODO DIY */
             },
-            onCancelled: async (payload) => { // (mandatory) payment was cancelled or expired
+            onCancelled: (payload) => { // (mandatory) payment was cancelled or expired
                 /* TODO DIY */
             },
-            onPending: async (payload) => { // (optional) if the payment attempt failed, the payment can continue
+            onPending: (payload) => { // (optional) if the payment attempt failed, the payment can continue
                 /* TODO DIY nebo nedefinovat */
                 // if no action is taken, it is advisable not to define the callback
             },
-            onClick: async (payload) => { // (optional) called after clicking the button, before processing the payment [confirmation required]
+            onClick: (payload) => { // (optional) called after clicking the button, before processing the payment [confirmation required]
                 /* TODO DIY nebo nedefinovat */
                 // if no action is taken, it is advisable not to define the callback
 
@@ -35,7 +35,7 @@ document.addEventListener("ComgateCheckoutReady", function () {
                     payload.resolve();
                 }
             },
-            onError: async (payload) => { // (mandatory) Error details during processing
+            onError: (payload) => { // (mandatory) Error details during processing
                 /* TODO DIY */
                 // A substantial part of the payment processing is done asynchronously and therefore cannot be linked to the standard try-catch block.
                 // if this callback is called, the payment is no longer continued, the Comgate ID of the transaction can be used again

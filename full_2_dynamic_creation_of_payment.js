@@ -15,7 +15,7 @@ document.addEventListener("ComgateCheckoutReady", function () {
             // list only the services you want to use
             prefetch: ['googlepay'], // (optional) preload the script for Google Pay (Apple Pay is always preloaded)
 
-            onRequirePayment: async (payload) => { // (mandatory) Incorporation and delivery of Comgate transaction ID is requested
+            onRequirePayment: (payload) => { // (mandatory) Incorporation and delivery of Comgate transaction ID is requested
                 payload
                     .eshopRequest({
                         method: "POST",
@@ -43,19 +43,19 @@ document.addEventListener("ComgateCheckoutReady", function () {
                 // you can use the helper method supplied in payload to send requests to your server payload.eshopRequest(/*...*/)
                 // or by saving the ComgateCheckout instance into the checkoutInstance.eshopRequest(/*...*/)
             },
-            onPaid: async (payload) => { // (mandatory) payment has been paid
+            onPaid: (payload) => { // (mandatory) payment has been paid
                 removeButtons();
                 alert("The payment was successfully made.");
             },
-            onCancelled: async (payload) => { // (mandatory) payment was cancelled or expired
+            onCancelled: (payload) => { // (mandatory) payment was cancelled or expired
                 removeButtons();
                 alert("Payment was cancelled or expired.");
             },
-            onPending: async (payload) => { // (optional) if the payment attempt failed, the payment can continue
+            onPending: (payload) => { // (optional) if the payment attempt failed, the payment can continue
                 alert("Payment failed, try again.");
                 // if no action is taken, it is advisable not to define the callback
             },
-            onClick: async (payload) => { // (optional) called after clicking the button, before processing the payment [confirmation required]
+            onClick: (payload) => { // (optional) called after clicking the button, before processing the payment [confirmation required]
                 // if no action is taken, it is advisable not to define the callback
 
                 alert("Payment will be made.");
@@ -68,7 +68,7 @@ document.addEventListener("ComgateCheckoutReady", function () {
                     payload.resolve();
                 }
             },
-            onError: async (payload) => { // (mandatory) Error details during processing
+            onError: (payload) => { // (mandatory) Error details during processing
                 removeButtons();
                 alert("Payment not made.");
                 // A substantial part of the payment processing is done asynchronously and therefore cannot be linked to the standard try-catch block.
