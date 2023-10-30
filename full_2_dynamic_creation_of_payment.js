@@ -7,7 +7,7 @@ document.addEventListener("ComgateCheckoutReady", function () {
     // creation of ComgateCheckout instance
     window
         .ComgateCheckout({
-            checkoutId: "xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx", // (mandatory) obtained in step 5
+            checkoutId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // (mandatory) obtained in step 5
             locale: "cs", // (optional, default: cs) UI language
 
             debug: true, // (optional, default: false) detailed development information to the console !!! DO NOT USE 'true' ON PRODUCTION !!!
