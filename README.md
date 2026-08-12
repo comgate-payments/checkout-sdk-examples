@@ -1,3 +1,11 @@
+> [!CAUTION]
+> ## ⚠️ DEPRECATED ⚠️
+>
+> **This documentation is deprecated and is no longer maintained.**
+>
+> The current, actively maintained documentation is available at
+> **https://apidoc.comgate.cz/checkout/uvod/**
+
 # Comgate Checkout SDK examples
 
 The Comgate Checkout SDK is a library that facilitates the implementation of Comgate payment methods, including Apple Pay and Google Pay, directly into the shopping cart of an online store.
